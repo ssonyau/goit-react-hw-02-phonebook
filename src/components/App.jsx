@@ -36,10 +36,10 @@ export class App extends Component {
       number: fieldResult.number,
     };
 
-    let presents = this.state.contacts.some(
+    let isAddedContact = this.state.contacts.some(
       item => item.name.toLowerCase() === newContact.name.toLowerCase()
     );
-    if (presents === false) {
+    if (!isAddedContact) {
       this.setState(prevState => ({
         contacts: [...prevState.contacts, newContact],
       }));
@@ -66,7 +66,7 @@ export class App extends Component {
             inputValue={this.state.filter}
           />
           <ContactList
-            filterContacs={this.filterContacs}
+            filterContacs={this.filterContacts}
             removeItem={this.removeItem}
           />
         </div>

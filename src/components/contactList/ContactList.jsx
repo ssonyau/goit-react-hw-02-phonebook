@@ -3,11 +3,10 @@ import ContactListItem from './ContactListItem';
 import PropTypes from 'prop-types';
 
 const ContactList = ({ filterContacs, removeItem }) => {
-  const a = filterContacs();
-  // console.log('a', a);
+
   return (
     <ul>
-      {a.map(value => (
+      {filterContacs.map(value => (
         <ContactListItem
           key={value.id}
           name={value.name}
